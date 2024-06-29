@@ -1,4 +1,11 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
 const pageTitle = "About Me";
 
 const about = {
@@ -13,17 +20,35 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Next.JS", "Astro"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "orange";
+const fontWeight = "bold";
+const textCase = "uppercase"
 ---
-<html lang="en">
+
+<BaseLayout pageTitle={pageTitle}>
+
+</BaseLayout>
+<!-- <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}> 
+    h1{
+      color: purple;
+      font-size: 4rem;
+    }
+    .skill{
+      color: var(--skillColor);
+      font-weight: var(--fontWeight);
+      text-transform: var(--textCase);
+    }
+    </style>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Header />
+    
     <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
@@ -38,10 +63,15 @@ const goal = 3;
       <li>Two of my hobbies are: {about.hobbies[0]} and {about.hobbies[1]}</li>}
     </ul>
     <p>My skills are:</p>
-    <ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
+    <ul>{skills.map((skill) => <li class="skill">{skill}</li>)}</ul>
 
     {happy && <p>Happy to be learning Astro!</p>}
     {finished && <p>I finished this tutorial!</p>}
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not to finish in 3 days.</p>}
-  </body>
-</html>
+  <Footer />
+  <script>
+    import "../scripts/menu.js"
+  </script>
+</body>
+  
+</html> -->
