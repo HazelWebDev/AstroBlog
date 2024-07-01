@@ -3,6 +3,23 @@ html {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html.dark {
+  background-color: #282a36;
+  color: #f8f8f2;
+}
+
+.dark .nav-links a {
+  color: #bd93f9;
+}
+
+a {
+  color: #bd93f9;
+}
+
+a:visited {
+  color: #ff79c6;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
